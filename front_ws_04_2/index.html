@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documenttest</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div style="width: 20%">
+          <h1><a href="#">영화관리</a></h1>
+        </div>
+        <div>
+          <form action="#">
+            <!-- 홈으로 갈 수 있는 로고와 검색을 위한 form
+                메뉴들의 링크를 작성한다 -->
+            <input type="text" placeholder="제목을 입력하세요." />
+            <input type="submit" value="검색" />
+          </form>
+        </div>
+        <div class="span">
+          <span><a href="#">로그인</a></span>
+          <span><a href="#">로그아웃</a></span>
+          <span><a href="#">회원가입</a></span>
+          <span><a href="#">게시판</a></span>
+          <span><a href="#">마이페이지</a></span>
+        </div>
+      </nav>
+    </header>
+    <div>
+      <main style="display: inline-flex">
+        <section style="width: 80%; padding-bottom: 10%">
+          <h1>영화목록</h1>
+          <ul style="display: flex; flex-wrap: wrap">
+            <li>
+              <div>
+                <div>
+                  <img src="img\eternals.jpg" alt="이터널스" />
+                </div>
+                <div>
+                  <div class="title">이터널스</div>
+                  <hr />
+                  <div class="genre">액션</div>
+                  <div class="director">클로이자오</div>
+                  <div class="runningTime">155분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div>
+                  <img src="img\venom.jpg" alt="베놈" />
+                </div>
+                <div>
+                  <div class="title">베놈 2: 렛 데어 비 카니지</div>
+                  <hr />
+                  <div class="genre">액션</div>
+                  <div class="director">앤디 서키스</div>
+                  <div class="runningTime">97분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div>
+                  <img src="img\parasite.jpg" alt="기생충" />
+                </div>
+                <div>
+                  <div class="title">기생충</div>
+                  <hr />
+                  <div class="genre">드라마</div>
+                  <div class="director">봉준호</div>
+                  <div class="runningTime">131분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div>
+                  <img
+                    src="img\harrypoter_stone.jpg"
+                    alt="해리포터와마법사의돌"
+                  />
+                </div>
+                <div>
+                  <div class="title">해리포터와 마법사의 돌</div>
+                  <hr />
+                  <div class="genre">판타지</div>
+                  <div class="director">해리</div>
+                  <div class="runningTime">120분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div>
+                  <img src="img\dune.jpg" alt="듄" />
+                </div>
+                <div>
+                  <div class="title">듄</div>
+                  <hr />
+                  <div class="genre">모험</div>
+                  <div class="director">드니 뵐뇌브</div>
+                  <div class="runningTime">155분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div>
+                  <img src="img\tomb_of_the_river.jpg" alt="강릉" />
+                </div>
+                <div>
+                  <div class="title">강릉</div>
+                  <hr />
+                  <div class="genre">범죄</div>
+                  <div class="director">윤영빈</div>
+                  <div class="runningTime">119분</div>
+                  <input type="submit" value="찜" />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <aside style="width: 15%; float: right">
+          <div style="position: fixed; padding-top: 3%">
+            <h3>찜리스트</h3>
+            <div id="wishList"></div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <footer>
+      <ul style="display: flex; justify-content: space-between">
+        <div style="display: flex; width: 30%">
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">오시는길</a></li>
+        </div>
+        <div style="padding-right: 20px; width: 20%">
+          <li>®SSAFY 대전_4반_이창헌</li>
+        </div>
+      </ul>
+      <script type="text/javascript" src="js/main.js"></script>
+    </footer>
+  </body>
+</html>
