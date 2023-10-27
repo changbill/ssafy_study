@@ -50,7 +50,8 @@ public class UserRestController {
     
     // ID, PW가 맞는 지 확인만 해서
     // 프론트로 넘겨주겠다.
-    @PostMapping("login")
+    // value=~~, produce=~~ => header 한글로 나오게 하는 코드
+    @PostMapping(value="login" , produces="text/plain;charset=UTF-8")
     @ApiResponse(code = 200, message = "성공")
     public ResponseEntity<?> login(String id, String pass, @ApiIgnore HttpSession session) {
         User tmp = userService.login(id,pass);
@@ -58,12 +59,8 @@ public class UserRestController {
         if(tmp == null)
             return new ResponseEntity<Void>(HttpStatus.UNAUTHORIZED); // 권한이 없다.
         
-        HttpHeaders resHeaders = new HttpHeaders();
-        resHeaders.add("Content-Type", "text/plain;charset=UTF-8");
-        
-        
         session.setAttribute("loginUser", tmp.getName());
-        return new ResponseEntity<String>(tmp.getName(), resHeaders, HttpStatus.OK);
+        return new ResponseEntity<String>(tmp.getName(), HttpStatus.OK);
     }
     
     @GetMapping("logout")
