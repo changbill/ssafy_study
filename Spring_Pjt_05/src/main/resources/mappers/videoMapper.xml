@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.video.model.dao.VideoDao">
+	<!-- 이 방식으로는 커리큘럼 이름을 가지고 올수 없다. -->
+	<!-- <select id="selectAll" resultType="User"> SELECT id, password, name, 
+		curriculum_code as curriculumCode FROM users </select> -->
+
+	<select id="sortCount" resultType="Video">
+		SELECT * 
+		FROM video
+		ORDER BY view_cnt DESC
+	</select>
+	
+	<select id="sortPart" parameterType="String" resultType="Video">
+		SELECT *
+		FROM video
+		WHERE fit_path_name = #{part}
+		ORDER BY view_cnt DESC
+	</select>
+	
+	
+	
+</mapper>
