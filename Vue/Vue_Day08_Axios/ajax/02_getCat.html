@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Vue</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <button @click="getCat">냥냥펀치1</button>
+    <button @click="getCat2">냥냥펀치2</button>
+    <hr>
+    <img :src="catImageSrc" />
+  </div>
+
+  <script>
+    // Vue로 하는 방식
+    const { createApp, ref, onMounted } = Vue
+
+
+    const URL = 'https://api.thecatapi.com/v1/images/search'
+
+
+    const app = createApp({
+      setup() {
+        const catImageSrc = ref('')
+
+        // fetch 방식
+        const getCat = function () {
+          fetch(URL)
+            .then((response) => response.json())
+            .then((imgData) => {
+              catImageSrc.value = imgData[0].url
+            })
+            .catch((error) => {
+              console.log("실패")
+            })
+        }
+
+        // axios 방식
+        const getCat2 = function () {
+          axios({
+            url: URL,
+            method: 'GET',
+          })
+            .then((response) => {
+              catImageSrc.value = response.data[0].url
+            })
+            .catch((error) => {
+              console.log("실패")
+            })
+        }
+
+        // onMounted : 연결된 후 이벤트 없이 실행하고 싶은 작업들 작성
+        onMounted(() => {
+          getCat2()
+        })
+
+        return {
+          catImageSrc,
+          getCat,
+          getCat2,
+        }
+      }
+    })
+
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
